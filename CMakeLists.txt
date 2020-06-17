@@ -5,7 +5,7 @@ enable_testing()
 set (CMAKE_CXX_STANDARD 11)
 set (gtest_force_shared_crt ON CACHE BOOL "MSVC defaults to shared CRT" FORCE)
 
-add_subdirectory(thirdparty/googletest/googletest)
+add_subdirectory(third_party/googletest/googletest)
 target_compile_definitions(gtest
     PUBLIC
         GTEST_LANG_CXX11
