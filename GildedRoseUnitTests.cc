@@ -18,6 +18,15 @@ std::ostream& operator<<(std::ostream& s, Item& item)
 //     EXPECT_EQ("fixme", app.items[0].name);
 // }
 
+// TEST(GildedRoseLegacyTest, Text) {
+//     std::vector<Item> items;
+//     items.push_back(Item("Conjured Mana Cake", 3, 6));
+//     GildedRose app(items);
+//     app.updateQuality();
+//     ASSERT_EQ(items[0].quality, 4);
+//     ASSERT_EQ(items[0].sellIn, 3);
+// }
+
 TEST(GildedRoseLegacyTest, Text) {
     std::vector<Item> items;
     items.push_back(Item("+5 Dexterity Vest", 10, 20));
