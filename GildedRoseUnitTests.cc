@@ -10,13 +10,14 @@ std::ostream& operator<<(std::ostream& s, Item& item)
     return s;
 }
 
-// TEST(GildedRoseTest, Foo) {
-//     vector<Item> items;
-//     items.push_back(Item("Foo", 0, 0));
-//     GildedRose app(items);
-//     app.updateQuality();
-//     EXPECT_EQ("fixme", app.items[0].name);
-// }
+std::ostream& operator<<(std::ostream& s, const SellInQuality& item)
+{
+    return s << item.sellIn << ", " << item.quality;
+}
+
+TEST(GildedRoseTest, ConjuredItem) {
+    EXPECT_EQ((SellInQuality{1, 8}), ConjuredItem::nextSellInQuality(SellInQuality{2, 10}));
+}
 
 // TEST(GildedRoseLegacyTest, Text) {
 //     std::vector<Item> items;
