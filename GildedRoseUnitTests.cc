@@ -15,9 +15,20 @@ std::ostream& operator<<(std::ostream& s, const SellInQuality& item)
     return s << item.sellIn << ", " << item.quality;
 }
 
-TEST(GildedRoseTest, ConjuredItem) {
-    EXPECT_EQ((SellInQuality{1, 8}), ConjuredItem::nextSellInQuality(SellInQuality{2, 10}));
+TEST(GildedRoseTest, ConjuredItem_PositiveSellIn) {
+    EXPECT_EQ((SellInQuality{1, 8}), //
+        ConjuredItem::nextSellInQuality(SellInQuality{2, 10}));
 }
+TEST(GildedRoseTest, ConjuredItem_NegativeSellIn) {
+    EXPECT_EQ((SellInQuality{-2, 6}), //
+        ConjuredItem::nextSellInQuality(SellInQuality{-1, 10}));
+}
+
+TEST(GildedRoseTest, ConjuredItem_QualityZero) {
+    EXPECT_EQ((SellInQuality{1, 0}), //
+        ConjuredItem::nextSellInQuality(SellInQuality{2, 0}));
+}
+
 
 // TEST(GildedRoseLegacyTest, Text) {
 //     std::vector<Item> items;
